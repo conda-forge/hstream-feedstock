@@ -1,11 +1,11 @@
-About hstream
-=============
+About hstream-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hstream-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/conradbez/hstream
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hstream-feedstock/blob/main/LICENSE.txt)
 
 Summary: Create python webapps with ease
 
