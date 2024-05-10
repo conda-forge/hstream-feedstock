@@ -1,5 +1,5 @@
 {% set name = "hstream" %}
-{% set version = "0.0.20" %}
+{% set version = "0.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hstream-{{ version }}.tar.gz
-  sha256: a080208df85af49334e3a5f847bb2815c282558f6e9fea90c003d8711992b7d7
+  sha256: 992e8e22e9fc83b6c65224a0264733be2a6983d0d9db8e347fa76e316e46bc6f
 
 build:
   entry_points:
-    - hstream = hstream.runner:run
+    - hstream = hstream.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -19,18 +19,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.10,<4.0
+    - poetry-core
   run:
-    - fastapi >=0.85,<1.dev0
-    - jinja2 >=3.1,<4.dev0
-    - markdown >=3.4,<4.dev0
-    - matplotlib-base
-    - python >=3.6
-    - python-multipart
-    - starlette-context ==0.3.4
-    - uvicorn >=0.19,<1.dev0
-    - watchfiles >=0.18,<1.dev0
-    - yattag >=1.14,<2.dev0
+    - python >=3.10,<4.0
+    - cherrypy >=18.9.0,<19.0.0
+    - click >=8.1.7,<9.0.0
+    - yattag >=1.15.2,<2.0.0
+    - ipdb >=0.13.13,<0.14.0
+    - markdown >=3.6,<4.0
+    - beautifulsoup4 >=4.12,<5.0
 
 test:
   commands:
