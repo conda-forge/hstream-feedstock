@@ -30,8 +30,13 @@ requirements:
     - django >=5.0.6,<6.0.0
 
 test:
+  import:
+    - hstream
   commands:
+    - pip check
     - hstream --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/conradbez/hstream
