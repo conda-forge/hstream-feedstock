@@ -30,7 +30,7 @@ requirements:
     - django >=5.0.6,<6.0.0
 
 test:
-  import:
+  imports:
     - hstream
   commands:
     - pip check
