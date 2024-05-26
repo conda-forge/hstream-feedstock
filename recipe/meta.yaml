@@ -1,5 +1,5 @@
 {% set name = "hstream" %}
-{% set version = "0.1.53" %}
+{% set version = "0.1.54" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hstream-{{ version }}.tar.gz
-  sha256: 95c45a2afface53bbe69e4053afd84322b4eaa8a9813f0c6fb5ea869f9d62f3e
+  sha256: 6c6f661c0d7e297a2eedec115456810ea999a3591de498a0379aeae9bd40320d
 
 build:
   entry_points:
