@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "hstream" %}
 {% set version = "0.1.56" %}
 
@@ -6,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hstream-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hstream-{{ version }}.tar.gz
   sha256: 713e356fdec55182b31abad30acb353e07a9a6a08fb86f517f8a117d1f8eec93
 
 build:
@@ -14,15 +15,15 @@ build:
     - hstream = hstream.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.10,<4.0
+    - python {{ python_min }}
     - poetry-core
   run:
-    - python >=3.10,<4.0
+    - python >={{ python_min }},<4.0
     - click >=8.1.7,<9.0.0
     - yattag >=1.15.2,<2.0.0
     - markdown >=3.6,<4.0
@@ -37,6 +38,7 @@ test:
     - hstream --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/conradbez/hstream
