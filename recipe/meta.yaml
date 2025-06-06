@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "hstream" %}
-{% set version = "0.1.56" %}
+{% set version = "0.1.57" %}
 
 package:
   name: {{ name|lower }}
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hstream-{{ version }}.tar.gz
-  sha256: 713e356fdec55182b31abad30acb353e07a9a6a08fb86f517f8a117d1f8eec93
+  sha256: 0effc5289e312e8f5882ac33e68a20d051e3a1cb4cdc41f751f4aa195c3887c1
 
 build:
   entry_points:
     - hstream = hstream.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
