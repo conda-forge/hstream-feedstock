@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: 3.10
   name: hstream
-  version: 0.1.57
+  version: "0.5.1"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/hstream-${{ version }}.tar.gz
-  sha256: 0effc5289e312e8f5882ac33e68a20d051e3a1cb4cdc41f751f4aa195c3887c1
+  sha256: 8d20cc7153370f9f79c193cb5d7bd7ae14d1b22096edd692444ad83c303b007f
 
 build:
   number: 0
